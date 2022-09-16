@@ -33,32 +33,5 @@
                 date = date
             };
         }
-        /*
-         * SST -11
-         * CKT -10
-         * LINT +14
-         * TKT +13
-         * TAHT -10
-         * AKDT -8
-         * PDT -7
-         * MDT -6
-         * CDT -5
-         * EDT -4
-         * ADT -3
-         * WGST -2
-         * GMT +0
-         * BST +1
-         * CEST +2
-         * EEST +3
-         * SAMT +4
-         * YEKT +5
-         * ALMT +6
-         * KRAT +7
-         * ULAT +8
-         * YAKT +9
-         * VLAT +10
-         * SRET +11
-         * ANAT +12
-         */
     }
 }
