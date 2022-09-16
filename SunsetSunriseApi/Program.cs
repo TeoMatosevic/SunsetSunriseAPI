@@ -21,17 +21,6 @@ builder.Services.AddSwaggerGen(c => {
 
 });
 
-/*builder.Services.AddDbContext<HrNetStagingContext>(o => o.UseSqlServer("Server=" + builder.Configuration.GetConnectionString("Server") + "; Database=" + builder.Configuration.GetConnectionString("Database") + "; User Id=" + builder.Configuration.GetConnectionString("User") + "; Password=" + builder.Configuration.GetConnectionString("Password") + ";"));
-
-var app = builder.Build();
-
-if (!Database.Exists("Server=" + builder.Configuration.GetConnectionString("Server") + "; Database=" + builder.Configuration.GetConnectionString("Database") + "; User Id=" + builder.Configuration.GetConnectionString("User") + "; Password=" + builder.Configuration.GetConnectionString("Password") + ";")) {
-    using (var connection = new SqlConnection("Server=" + builder.Configuration.GetConnectionString("Server") + "; User Id=" + builder.Configuration.GetConnectionString("User") + "; Password=" + builder.Configuration.GetConnectionString("Password") + ";")) {
-        SqlCommand cmd = new SqlCommand("RESTORE DATABASE [HrNetStaging] FROM  DISK = " + builder.Configuration.GetConnectionString("BackupConnectionString_bak") + "HrNetStaging.bak' WITH  FILE = 8,  MOVE N'HrNetStaging' TO " + builder.Configuration.GetConnectionString("BackupConnectionString_other") + "HrNetStaging.mdf',  MOVE N'HrNetStaging_log' TO " + builder.Configuration.GetConnectionString("BackupConnectionString_other") + "HrNetStaging_log.ldf',  NOUNLOAD,  STATS = 5", connection);
-        cmd.Connection.Open();
-        cmd.ExecuteNonQuery();
-    }
-}*/
 builder.Services.AddDbContext<SunsetSunriseDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("Docker")));
 
 var app = builder.Build();
@@ -46,10 +35,6 @@ if (!Database.Exists(builder.Configuration.GetConnectionString("Docker"))) {
 }
 
 // Configure the HTTP request pipeline.
-/* if (app.Environment.IsDevelopment()) {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-} */
 
 app.UseSwagger();
 app.UseSwaggerUI();
